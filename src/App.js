@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import AddBed from './components/AddBed';
+import SearchBed from './components/SearchBed';
+import DeleteBed from './components/DeleteBed';
+import ViewBed from './components/ViewBed';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<AddBed/>} />
+    <Route path='/search' element={<SearchBed/>} />
+    <Route path='/delete' element={<DeleteBed/>} />
+    <Route path='/view' element={<ViewBed/>} />
+  </Routes>
+  </BrowserRouter>
   );
 }
 
